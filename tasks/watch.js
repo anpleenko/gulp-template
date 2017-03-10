@@ -1,0 +1,44 @@
+import gulp from 'gulp';
+import del from 'del';
+import { config, $ } from './config';
+
+gulp.task('watch', (cb) => {
+  gulp.watch(config.src.scripts, gulp.parallel('scripts'));
+  gulp.watch(config.src.images, gulp.parallel('images'));
+
+  gulp.watch(config.src.dataJson, gulp.parallel('jade'));
+  gulp.watch(config.src.misc, gulp.parallel('misc'));
+
+  gulp.watch(['./src/style/**/*.scss', './src/components/**/*.scss'], gulp.parallel('style'));
+
+  gulp.watch([
+    config.src.jade,
+    config.src.layouts,
+    config.src.components,
+  ], gulp.parallel('jade'));
+
+  // $.watch(config.src.style, () => gulp.start('style'));
+  // $.watch(config.src.jade, () => gulp.start('jade'));
+  // $.watch(config.src.scripts, () => gulp.start('scripts'));
+
+  cb();
+});
+
+gulp.task('delete_dist', () => del([config.dest.app]));
+
+gulp.task('zip', () =>
+  gulp.src('./dist/**')
+    .pipe($.zip('art6-iqavia.zip'))
+    .pipe(gulp.dest(config.dest.app))
+);
+
+gulp.task('build', gulp.series(
+  'delete_dist',
+  'jade',
+  'style',
+  'images',
+  'misc',
+  'libs',
+));
+
+gulp.task('default', gulp.series('watch', 'server'));

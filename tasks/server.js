@@ -1,0 +1,12 @@
+import gulp from 'gulp';
+import gulpLoadPlugins from 'gulp-load-plugins';
+import { config, bs } from './config';
+
+gulp.task('server', () => {
+  bs({
+    server: {
+      baseDir: config.dest.app,
+    },
+    open: false,
+  });
+});

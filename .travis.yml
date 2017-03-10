@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - 6
+env:
+  global:
+    - GH_REF: github.com/vaeum/iqavia.git
+    - secure: AK9AkTPfh+Dx4QVQ60PKsA7neb6oyNaw/LcVT8JfBlu5IcZU8kedCr474WOcvs1XQu01l9AeWFy6ITzYsW+4onD+gflre/8/suoDbnKcvQ6tEdezS/mZyXz1omg5dErdLN4tBpSPfzF5T1PkpcPgNbQ5w3PD2T4neG+IguVHhGH+yIhb6K/B74hOk72B2+G+wizl7+ha+xSLYRxmZhkoWdeMTSFmIfRwLYGM2F6+kHgbvyLA2enROvbwLn5mF7FpboESRBy+9FSaadEYOyMtpA60iG1WYJ0yncx7zUpdtSDJBPFVY9KE9goktFI4P0Tjq2aVmIAyKMamHp9h7zKtomMTmbbKVKxG4y0Mt6qFT2dfpGUndDwTw9kap74u9qBlX0O0xLPFaHXRzkTY9+rVd5g7sH2jN7/ZCUoUW8LEzCKYX0LmvTG8oJdRDvX/IgER59HHvTg58UiZNaWTa2b2SGn2PY9u77CtpDpdQ4URzXGv1Tj3evOhFM/2Jq3YEFORMzFn+ngBlB9AB1Zo2JWs6eNBk8/9PBIOvePrDkIjiJa+1H8xr4h8kZ2KqirYUFF4oaV5F+UuU4i2uWmnqSlSfKgC2ramPtqkNqs3XeKxhEqGQwKHOIGu/3X7t/4le/aR3nbGJn6PZEgbZAKgrFywX8RQc1YWVt0RQL9dMsGVpak=
+before_install:
+  - npm config set depth 0
+before_script:
+  # - npm install -g bower
+  # - npm install -g gulp
+script:
+  - NODE_ENV=production make build
+  - make zip
+
+  - cd dist
+  - git init
+  - 'git config user.name "Alexander Anpleenko"'
+  - 'git config user.email "vaeum@yahoo.com"'
+  - git add .
+  - 'git commit -m "Deploy to GitHub Pages"'
+  - 'git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1'

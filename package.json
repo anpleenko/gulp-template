@@ -62,7 +62,6 @@
     "sass": "^0.5.0"
   },
   "dependencies": {
-    "bxslider": "^4.2.6",
     "jquery": "^2.2.4"
   }
 }

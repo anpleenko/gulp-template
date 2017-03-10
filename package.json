@@ -41,7 +41,6 @@
     "eslint-plugin-react": "^6.9.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-babel": "^6.1.1",
-    "gulp-cached": "^1.1.1",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^2.0.0",
     "gulp-if": "^2.0.2",

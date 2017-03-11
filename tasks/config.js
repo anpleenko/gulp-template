@@ -66,6 +66,7 @@ export const config = {
   ],
 
   babel: {
+    comments: false,
     presets: ['es2015'],
   },
 };

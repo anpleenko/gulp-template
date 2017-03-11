@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/gulp",
     "build": "./node_modules/.bin/gulp build",
-    "rebuild": "npm build && npm start"
+    "rebuild": "npm run build && npm start"
   },
   "repository": {
     "type": "git",

@@ -17,10 +17,6 @@ gulp.task('watch', (cb) => {
     config.src.components,
   ], gulp.parallel('jade'));
 
-  // $.watch(config.src.style, () => gulp.start('style'));
-  // $.watch(config.src.jade, () => gulp.start('jade'));
-  // $.watch(config.src.scripts, () => gulp.start('scripts'));
-
   cb();
 });
 

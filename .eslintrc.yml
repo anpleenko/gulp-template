@@ -8,21 +8,12 @@ rules:
   - error
   - 800
 globals:
-  DEV: true
   window: true
   document: true
   _: true
   $: true
-  isMobile: true
   istouch: true
   localStorage: true
-  lib: true
-  describe: true
-  it: true
-  Component: true
-  React: true
-  navigator: true
-  PropTypes: true
 env:
   es6: true
   browser: true

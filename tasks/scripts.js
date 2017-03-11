@@ -21,7 +21,7 @@ gulp.task('scripts', () =>
 );
 
 const libsSrc = [
-  './node_modules/bootstrap-only-js/lib/modal.js',
+  //'./node_modules/bootstrap-only-js/lib/modal.js',
 ];
 
 gulp.task('libs', () =>

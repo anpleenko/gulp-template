@@ -20,17 +20,4 @@ gulp.task('scripts', () =>
     .on('end', bs.reload)
 );
 
-const libsSrc = [
-  //'./node_modules/bootstrap-only-js/lib/modal.js',
-];
-
-gulp.task('libs', () =>
-  gulp.src(libsSrc)
-    .pipe($.concat('libs.js'))
-    .pipe(gulp.dest(config.dest.scripts))
-);
-
-gulp.task('libs', gulp.series(
-  'scripts',
-  // 'libs',
-));
+gulp.task('libs', gulp.series('scripts'));

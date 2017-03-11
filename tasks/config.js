@@ -35,7 +35,11 @@ export const config = {
     components: './src/components/**/*.jade',
     dataJson: './src/data/data.json',
     scripts: './src/scripts/**/*.js',
-    images: './src/images/**',
+    images: [
+      './src/images/**',
+      './src/components/**/*.png',
+      './src/components/**/*.jpg',
+    ],
     misc: './src/misc/**',
   },
 

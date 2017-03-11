@@ -5,11 +5,13 @@ import { config, $ } from './config';
 gulp.task('watch', (cb) => {
   gulp.watch(config.src.scripts, gulp.parallel('scripts'));
   gulp.watch(config.src.images, gulp.parallel('images'));
-
   gulp.watch(config.src.dataJson, gulp.parallel('jade'));
   gulp.watch(config.src.misc, gulp.parallel('misc'));
 
-  gulp.watch(['./src/style/**/*.scss', './src/components/**/*.scss'], gulp.parallel('style'));
+  gulp.watch([
+    './src/style/**/*.scss',
+    './src/components/**/*.scss'
+  ], gulp.parallel('style'));
 
   gulp.watch([
     config.src.jade,
@@ -20,11 +22,13 @@ gulp.task('watch', (cb) => {
   cb();
 });
 
-gulp.task('delete_dist', () => del([config.dest.app]));
+gulp.task('delete_dist', () =>
+  del([config.dest.app])
+);
 
 gulp.task('zip', () =>
   gulp.src('./dist/**')
-    .pipe($.zip('art6-iqavia.zip'))
+    .pipe($.zip('project.zip'))
     .pipe(gulp.dest(config.dest.app))
 );
 

@@ -8,6 +8,7 @@ gulp.task('imagemin_clear', () =>
 
 gulp.task('imagemin_build', () =>
   gulp.src(config.src.images)
+    .pipe($.flatten())
     .pipe($.imagemin({ progressive: true }))
     .pipe(gulp.dest(config.dest.images))
 );

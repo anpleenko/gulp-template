@@ -40,6 +40,7 @@
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-add-src": "^0.2.0",
     "gulp-babel": "^6.1.1",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^2.0.0",

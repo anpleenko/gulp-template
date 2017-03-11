@@ -1,5 +1,3 @@
-const istouch = ( !!('ontouchstart' in window)) ? 'touchstart' : 'click';
-
 $(() => {
   let clearMobileClasses = function() {
     $('.off-canvas-wrapper-inner')

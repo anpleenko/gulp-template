@@ -5,6 +5,7 @@ export const $ = gulpLoadPlugins({});
 export const bs = browserSync;
 
 export const isDev = (process.env.NODE_ENV || 'development') === 'development';
+export const isProd = (process.env.NODE_ENV || 'development') === 'production';
 
 export const AUTOPREFIXER_CONFIG = [
   'Android 2.3',

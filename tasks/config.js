@@ -40,6 +40,7 @@ export const config = {
       './src/images/**',
       './src/components/**/*.png',
       './src/components/**/*.jpg',
+      './src/components/**/*.svg',
     ],
     misc: './src/misc/**',
   },
@@ -60,10 +61,6 @@ export const config = {
 
   PROCESSORS_PERFECTIONIST: [
     require('perfectionist'),
-  ],
-
-  includePaths: [
-    './node_modules/bootstrap-sass/assets/stylesheets/',
   ],
 
   babel: {

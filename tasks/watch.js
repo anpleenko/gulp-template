@@ -10,7 +10,7 @@ gulp.task('watch', (cb) => {
 
   gulp.watch([
     './src/style/**/*.scss',
-    './src/components/**/*.scss'
+    './src/components/**/*.scss',
   ], gulp.parallel('style'));
 
   gulp.watch([

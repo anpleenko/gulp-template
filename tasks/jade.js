@@ -30,6 +30,5 @@ gulp.task('jade', () => {
     }))
 
     .pipe(gulp.dest(config.dest.app))
-
     .on('end', bs.reload);
 });

@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import { config, $, bs } from './config';
+import { config, bs } from './config';
 
 gulp.task('misc', () =>
   gulp.src(config.src.misc)

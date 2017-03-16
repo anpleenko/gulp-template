@@ -44,10 +44,6 @@ $off-canvas-width: 250px;
     transition: transform 0.5s ease;
     backface-visibility: hidden;
     z-index: 1;
-    box-shadow: 0 0 10px rgba(10,10,10,0.5);
-    
-    // фиксируем блок
-    table-layout: fixed;
   }
 }
 

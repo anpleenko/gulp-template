@@ -25,11 +25,15 @@ main {
   display: table;
   width: 100%;
   min-height: 100vh;
+  box-shadow: 0 0 10px rgba(10,10,10,0.5);
+    
+  // фиксируем блок
+  table-layout: fixed;
 }
 
 /*
 -------------------------------------------------- */
 
 .footer{
-
+	// footer style
 }

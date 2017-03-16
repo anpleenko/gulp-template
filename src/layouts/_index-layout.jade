@@ -32,8 +32,11 @@ html(lang="ru")
     link(rel='icon', href='img/favicon-62.png', sizes='62x62', type='image/png')
     link(rel='icon', href='img/favicon-192.png', sizes='192x192', type='image/png')
     //- Больше информации: https://bitsofco.de/all-about-favicons-and-touch-icons/
-
-
+	
+    //- добавляем normalize.css
+    link(href="https://unpkg.com/normalize.css", rel="stylesheet")
+    
+    //- подключаем файл со стилями
     link(href="css/style.css", rel="stylesheet")
 
     |<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -73,7 +76,6 @@ html(lang="ru")
     script(src="http://vaeum.com/cdn/extsrcjs.js")
 
     script(extsrc="js/jquery.min.js")
-    script(extsrc="js/libs.js")
 
     block script
 

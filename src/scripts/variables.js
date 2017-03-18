@@ -1,1 +1,1 @@
-const istouch = ( !!('ontouchstart' in window)) ? 'touchstart' : 'click';
+const istouch = (!!('ontouchstart' in window)) ? 'touchstart' : 'click';

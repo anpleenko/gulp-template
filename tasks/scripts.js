@@ -1,13 +1,10 @@
 import gulp from 'gulp';
 import { config, $, bs, errorLogFunc } from './config';
 
-const source = [
-  './src/scripts/variables.js',
-];
-
 gulp.task('scripts', () =>
-  gulp.src(source)
-    .pipe($.addSrc('./src/scripts/main.js'))
+  gulp.src(config.src.scripts)
+    .pipe($.include())
+      .on('error', errorLogFunc)
 
     .pipe($.babel(config.babel))
       .on('error', errorLogFunc)

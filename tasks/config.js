@@ -40,7 +40,7 @@ export const config = {
     layouts: './src/layouts/*.jade',
     components: './src/components/**/*.jade',
     dataJson: './src/data/data.json',
-    scripts: './src/scripts/**/*.js',
+    scripts: './src/scripts/main.js',
     images: [
       './src/images/**',
       './src/components/**/*.png',

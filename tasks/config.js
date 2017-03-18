@@ -18,15 +18,20 @@ export const AUTOPREFIXER_CONFIG = [
   'Safari >= 7.1',
 ];
 
-export function errorLogFunc(error) {
-  console.error(`
-    ----------ERROR MESSAGE START----------
-    [${error.name} in ${error.plugin}]
-    ${error.message}
-    -----------ERROR MESSAGE END-----------
-  `);
-  this.end();
-}
+export const errorLogFunc = $.notify.onError({
+  message: "Error: <%= error.message %>",
+  title: "Error running something"
+})
+
+// export function errorLogFunc(error) {
+//   console.error(`
+//     ----------ERROR MESSAGE START----------
+//     [${error.name} in ${error.plugin}]
+//     ${error.message}
+//     -----------ERROR MESSAGE END-----------
+//   `);
+//   this.end();
+// }
 
 export const config = {
   src: {

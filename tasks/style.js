@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import { config, $, bs } from './config';
+import { config, $, bs, errorLogFunc } from './config';
 
 const reload = bs.reload;
 
@@ -10,7 +10,7 @@ const source = [
 gulp.task('style', () =>
   gulp.src(source)
     .pipe($.sassGlobImport())
-    .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.sass().on('error', errorLogFunc))
     .pipe($.concat('style.css'))
     .pipe($.postcss(config.PROCESSORS))
     .pipe($.csso())

@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import { config, $, bs, errorLogFunc } from './config';
+import { config, $, bs, errorLogFunc, isDev } from './config';
 
 const reload = bs.reload;
 
@@ -14,7 +14,7 @@ gulp.task('style', () =>
     .pipe($.concat('style.css'))
     .pipe($.postcss(config.PROCESSORS))
     .pipe($.csso())
-    .pipe($.postcss(config.PROCESSORS_PERFECTIONIST))
+    .pipe($.if(isDev, $.postcss(config.PROCESSORS_PERFECTIONIST)))
     .pipe(gulp.dest(config.dest.style))
     .pipe(reload({ stream: true }))
 );

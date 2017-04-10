@@ -19,9 +19,9 @@ export const AUTOPREFIXER_CONFIG = [
 ];
 
 export const errorLogFunc = $.notify.onError({
-  message: "Error: <%= error.message %>",
-  title: "Error running something"
-})
+  message: 'Error: <%= error.message %>',
+  title: 'Error running something',
+});
 
 // export function errorLogFunc(error) {
 //   console.error(`

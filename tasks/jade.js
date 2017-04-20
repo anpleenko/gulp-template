@@ -1,13 +1,13 @@
 import fs from 'fs';
 import gulp from 'gulp';
-import { config, $, bs, errorLogFunc } from './config';
+import { config, $, bs, errorHandler } from './config';
 
 gulp.task('jade', () => {
   const data = JSON.parse(fs.readFileSync(config.src.dataJson, 'utf-8'));
 
   return gulp.src([config.src.jade])
     .pipe($.jade({ locals: data }))
-      .on('error', errorLogFunc)
+      .on('error', errorHandler)
 
     .pipe($.posthtml([
       require('posthtml-bem')({

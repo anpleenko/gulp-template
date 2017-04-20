@@ -1,13 +1,13 @@
 import gulp from 'gulp';
-import { config, $, bs, errorLogFunc } from './config';
+import { config, $, bs, errorHandler } from './config';
 
 gulp.task('scripts', () =>
   gulp.src(config.src.scripts)
     .pipe($.include())
-      .on('error', errorLogFunc)
+      .on('error', errorHandler)
 
     .pipe($.babel(config.babel))
-      .on('error', errorLogFunc)
+      .on('error', errorHandler)
 
     .pipe($.concat('main.js'))
 

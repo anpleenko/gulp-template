@@ -1,7 +1,10 @@
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 
-export const $ = gulpLoadPlugins({});
+export const $ = gulpLoadPlugins({
+  pattern: ['gulp-*', 'del'],
+});
+
 export const bs = browserSync;
 
 export const isDev = (process.env.NODE_ENV || 'development') === 'development';
@@ -18,20 +21,10 @@ export const AUTOPREFIXER_CONFIG = [
   'Safari >= 7.1',
 ];
 
-export const errorLogFunc = $.notify.onError({
+export const errorHandler = $.notify.onError({
   message: 'Error: <%= error.message %>',
   title: 'Error running something',
 });
-
-// export function errorLogFunc(error) {
-//   console.error(`
-//     ----------ERROR MESSAGE START----------
-//     [${error.name} in ${error.plugin}]
-//     ${error.message}
-//     -----------ERROR MESSAGE END-----------
-//   `);
-//   this.end();
-// }
 
 export const config = {
   src: {

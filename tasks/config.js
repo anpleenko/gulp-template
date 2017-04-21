@@ -54,6 +54,18 @@ export const config = {
     ],
   },
 
+  jsbeautifierConfig: {
+    braceStyle: 'expand',
+    indentWithTabs: true,
+    indentInnerHtml: true,
+    preserveNewlines: true,
+    endWithNewline: true,
+    wrapLineLength: 120,
+    maxPreserveNewlines: 50,
+    wrapAttributesIndentSize: 1,
+    unformatted: ['use'],
+  },
+
   dest: {
     scripts: './dist/js/',
     style: './dist/css/',
@@ -61,6 +73,14 @@ export const config = {
     images: './dist/img/',
     misc: './dist/',
   },
+
+  POSTHTML_PROCESSORS: [
+    require('posthtml-bem')({
+      elemPrefix: '__',
+      modPrefix: '_',
+      modDlmtr: '--',
+    }),
+  ],
 
   PROCESSORS: [
     require('autoprefixer')({ browsers: AUTOPREFIXER_CONFIG }),

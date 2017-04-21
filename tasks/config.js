@@ -43,6 +43,17 @@ export const config = {
     misc: './src/misc/**',
   },
 
+  watch: {
+    scripts: [
+      './src/scripts/**/*.js',
+      './src/components/**/*.js',
+    ],
+    style: [
+      './src/style/**/*.scss',
+      './src/components/**/*.scss',
+    ],
+  },
+
   dest: {
     scripts: './dist/js/',
     style: './dist/css/',

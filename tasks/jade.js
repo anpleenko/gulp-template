@@ -1,6 +1,6 @@
 import fs from 'fs';
 import gulp from 'gulp';
-import { config, $, bs, errorHandler, isDev } from './config';
+import { config, $, bs, errorHandler, isDev, isProd } from './config';
 
 gulp.task('jade', () => {
   const data = JSON.parse(fs.readFileSync(config.src.dataJson, 'utf-8'));

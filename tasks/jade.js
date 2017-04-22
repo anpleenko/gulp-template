@@ -6,7 +6,7 @@ gulp.task('jade', () => {
   const data = JSON.parse(fs.readFileSync(config.src.dataJson, 'utf-8'));
 
   return gulp.src([config.src.jade])
-    .pipe($.jade({ locals: data }))
+    .pipe($.jade({ locals: Object.assign({}, data, { DEV: isDev }, { PROD: isProd }) }))
       .on('error', errorHandler)
 
     .pipe($.posthtml(config.POSTHTML_PROCESSORS))

@@ -12,7 +12,6 @@ gulp.task('style', () =>
     .pipe($.sassGlobImport())
     .pipe($.sass()
       .on('error', errorHandler))
-    .pipe($.concat('style.css'))
     .pipe($.postcss(config.PROCESSORS))
     .pipe($.csso())
     .pipe($.if(isDev, $.postcss(config.PROCESSORS_PERFECTIONIST)))

@@ -13,8 +13,7 @@ gulp.task('style', () =>
     .pipe($.sass()
       .on('error', errorHandler))
     .pipe($.postcss(config.PROCESSORS))
-    .pipe($.csso())
-    .pipe($.if(isDev, $.postcss(config.PROCESSORS_PERFECTIONIST)))
+    .pipe($.if(isDev, $.postcss(config.PERFECTIONIST)))
     .pipe(gulp.dest(config.dest.style))
     .pipe(reload({ stream: true }))
 );

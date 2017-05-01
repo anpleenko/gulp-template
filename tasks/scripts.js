@@ -9,7 +9,7 @@ gulp.task('scripts', () =>
     .pipe($.babel(config.babel))
       .on('error', errorHandler)
 
-    .pipe($.concat('main.js'))
+    // .pipe($.concat('main.js'))
     .pipe($.if(isProd, $.uglify()))
 
     .pipe($.addSrc('./node_modules/jquery/dist/jquery.min.js'))

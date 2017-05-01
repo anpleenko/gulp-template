@@ -53,23 +53,23 @@ html(lang="ru")
     .off-canvas-wrapper
       .off-canvas-wrapper-inner
         .off-canvas.position-left
-          include ../components/menu-mobile-left/_menu-mobile-left
+          include ../components/menu-mobile-left/menu-mobile-left
 
         .off-canvas-content
           .open-menu__button(data-show="left-menu") open left menu
           .open-menu__button(data-show="right-menu") open right menu
 
           main
-            include ../components/header/_header.jade
+            include ../components/header/header.jade
 
             block content
 
           block footer
-            include ../components/footer/_footer.jade
+            include ../components/footer/footer.jade
 
           .js-off-canvas-exit
         .off-canvas.position-right
-          include ../components/menu-mobile-right/_menu-mobile-right
+          include ../components/menu-mobile-right/menu-mobile-right
 
     block modal
 

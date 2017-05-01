@@ -28,12 +28,12 @@ export const errorHandler = $.notify.onError({
 
 export const config = {
   src: {
-    style: './src/style/**/*.scss',
+    style: './src/style/**/!(_)*.scss',
     jade: './src/pages/!(_)*.jade',
     layouts: './src/layouts/*.jade',
     components: './src/components/**/*.jade',
     data: './src/data/**/*.js',
-    scripts: './src/scripts/main.js',
+    scripts: './src/scripts/!(_)*.js',
     images: [
       './src/images/**',
       './src/components/**/*.png',

@@ -36,9 +36,7 @@ export const config = {
     scripts: './src/scripts/!(_)*.js',
     images: [
       './src/images/**',
-      './src/components/**/*.png',
-      './src/components/**/*.jpg',
-      './src/components/**/*.svg',
+      './src/components/**/*.{jpg,png,svg}',
     ],
     misc: './src/misc/**',
   },

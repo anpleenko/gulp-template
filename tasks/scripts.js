@@ -1,10 +1,10 @@
 import gulp from 'gulp';
-import { config, $, bs, notify, isProd } from './config';
+import { config, $, bs, notify, isProd, isDev } from './config';
 
 gulp.task('scripts', () =>
   gulp
     .src(config.src.scripts)
-    .pipe($.plumber({ errorHandler: notify('Scripts error') }))
+    .pipe($.if(isDev, $.plumber({ errorHandler: notify('Scripts error') })))
     .pipe($.include())
     .pipe($.babel(config.babel))
     .pipe($.if(isProd, $.uglify()))

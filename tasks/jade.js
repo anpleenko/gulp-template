@@ -5,7 +5,7 @@ import data from '../src/data';
 gulp.task('jade', () =>
   gulp
     .src([config.src.jade])
-    .pipe($.plumber({ errorHandler: notify('Jade error') }))
+    .pipe($.if(isDev, $.plumber({ errorHandler: notify('Jade error') })))
     .pipe(
       $.jade({
         locals: { ...data, DEV: isDev, PROD: isProd },

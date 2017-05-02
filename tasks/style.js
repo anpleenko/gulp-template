@@ -9,7 +9,7 @@ const source = [
 
 gulp.task('style', () =>
   gulp.src(source)
-    .pipe($.plumber({ errorHandler: notify('Style error') }))
+    .pipe($.if(isDev, $.plumber({ errorHandler: notify('Style error') })))
     .pipe($.sassGlobImport())
     .pipe($.sass())
     .pipe($.postcss(config.PROCESSORS))

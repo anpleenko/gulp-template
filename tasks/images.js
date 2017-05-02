@@ -1,15 +1,16 @@
 import gulp from 'gulp';
-import { config, $, errorHandler } from './config';
+import { config, $, notify } from './config';
 
 gulp.task('imagemin_clear', () =>
   $.del([config.dest.images])
 );
 
 gulp.task('imagemin_build', () =>
-  gulp.src(config.src.images)
+  gulp
+    .src(config.src.images)
+    .pipe($.plumber({ errorHandler: notify('Images error') }))
     .pipe($.flatten())
     .pipe($.imagemin({ progressive: true }))
-      .on('error', errorHandler)
     .pipe(gulp.dest(config.dest.images))
 );
 

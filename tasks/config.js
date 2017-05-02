@@ -21,10 +21,11 @@ export const AUTOPREFIXER_CONFIG = [
   'Safari >= 7.1',
 ];
 
-export const errorHandler = $.notify.onError({
-  message: 'Error: <%= error.message %>',
-  title: 'Error running something',
-});
+export const notify = (title = 'Error running something') =>
+  $.notify.onError({
+    message: 'Error: <%= error.message %>',
+    title,
+  });
 
 export const config = {
   src: {
@@ -34,11 +35,11 @@ export const config = {
     components: './src/components/**/*.jade',
     data: './src/data/**/*.js',
     scripts: './src/scripts/!(_)*.js',
+    misc: './src/misc/**',
     images: [
       './src/images/**',
       './src/components/**/*.{jpg,png,svg}',
     ],
-    misc: './src/misc/**',
   },
 
   watch: {
@@ -46,6 +47,7 @@ export const config = {
       './src/scripts/**/*.js',
       './src/components/**/*.js',
     ],
+
     style: [
       './src/style/**/*.scss',
       './src/components/**/*.scss',
@@ -88,7 +90,7 @@ export const config = {
   ],
 
   PERFECTIONIST: [
-    require('perfectionist'),
+    require('perfectionist')
   ],
 
   babel: {

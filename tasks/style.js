@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import { config, $, bs, errorHandler, isDev } from './config';
+import { config, $, bs, notify, isDev } from './config';
 
 const reload = bs.reload;
 
@@ -9,9 +9,9 @@ const source = [
 
 gulp.task('style', () =>
   gulp.src(source)
+    .pipe($.plumber({ errorHandler: notify('Style error') }))
     .pipe($.sassGlobImport())
-    .pipe($.sass()
-      .on('error', errorHandler))
+    .pipe($.sass())
     .pipe($.postcss(config.PROCESSORS))
     .pipe($.if(isDev, $.postcss(config.PERFECTIONIST)))
     .pipe(gulp.dest(config.dest.style))

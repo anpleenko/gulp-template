@@ -10,6 +10,7 @@ const source = [
 gulp.task('style', () =>
   gulp.src(source)
     .pipe($.if(isDev, $.plumber({ errorHandler: notify('Style error') })))
+    .pipe($.debug())
     .pipe($.sassGlobImport())
     .pipe($.sass())
     .pipe($.postcss(config.PROCESSORS))

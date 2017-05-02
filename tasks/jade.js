@@ -3,9 +3,9 @@ import { config, $, bs, notify, isDev, isProd } from './config';
 import data from '../src/data';
 
 gulp.task('jade', () =>
-  gulp
-    .src([config.src.jade])
+  gulp.src([config.src.jade])
     .pipe($.if(isDev, $.plumber({ errorHandler: notify('Jade error') })))
+    .pipe($.debug())
     .pipe(
       $.jade({
         locals: { ...data, DEV: isDev, PROD: isProd },

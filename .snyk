@@ -1,0 +1,44 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.3
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - browser-sync > socket.io > socket.io-adapter > socket.io-parser > debug:
+        patched: '2019-01-25T08:28:43.386Z'
+  'npm:hoek:20180212':
+    - gulp > glob-watcher > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2019-01-25T08:28:43.386Z'
+    - gulp > gulp-cli > wreck > boom > hoek:
+        patched: '2019-01-25T08:28:43.386Z'
+    - browser-sync > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2019-01-25T08:28:43.386Z'
+    - gulp > glob-watcher > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2019-01-25T08:28:43.386Z'
+    - browser-sync > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2019-01-25T08:28:43.386Z'
+    - browser-sync > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2019-01-25T08:28:43.386Z'
+    - browser-sync > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2019-01-25T08:28:43.386Z'
+    - gulp > glob-watcher > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2019-01-25T08:28:43.386Z'
+    - gulp > gulp-cli > wreck > hoek:
+        patched: '2019-01-25T08:28:43.386Z'
+    - gulp > glob-watcher > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2019-01-25T08:28:43.386Z'
+  'npm:minimatch:20160620':
+    - gulp-sass-glob-import > glob > minimatch:
+        patched: '2019-01-25T08:28:43.386Z'
+    - gulp-add-src > vinyl-fs > glob-stream > minimatch:
+        patched: '2019-01-25T08:28:43.386Z'
+    - gulp-add-src > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2019-01-25T08:28:43.386Z'
+    - gulp-add-src > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2019-01-25T08:28:43.386Z'
+  'npm:ms:20170412':
+    - browser-sync > socket.io > socket.io-adapter > socket.io-parser > debug > ms:
+        patched: '2019-01-25T08:28:43.386Z'
+  'npm:uglify-js:20151024':
+    - gulp-jade > jade > transformers > uglify-js:
+        patched: '2019-01-25T08:28:43.386Z'
